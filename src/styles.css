@@ -38,6 +38,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh ;
 }
 
 button {
@@ -62,6 +63,10 @@ p {
 
 ul {
   color: white;
+}
+
+a {
+  text-decoration: none;
 }
 
 
@@ -221,4 +226,26 @@ header {
 
 footer {
   border-top: 5px solid #213d28;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#dev-tag,
+#dev-tag + span,
+#attribution-tag,
+#attribution-tag + span {
+  font-family: 'Playfair';
+  font-style: italic;
+}
+
+#dev-tag,
+#dev-tag + span {
+  font-size: 1.25rem;
+}
+
+#attribution-tag,
+#attribution-tag + span {
+  font-size: 1rem;
 }
