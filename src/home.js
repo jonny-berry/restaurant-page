@@ -1,9 +1,10 @@
+import "./home.css";
 import capyImage from "./images/capybara-under-water-spout.png";
 
 
 
 const mainWrapper = document.createElement('div');
-mainWrapper.id = 'main-content';
+mainWrapper.id = 'home-main-content';
 
 const contentDiv = document.getElementById('content');
 contentDiv.appendChild(mainWrapper);
