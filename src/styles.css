@@ -38,7 +38,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh ;
+  min-height: 100vh;
+  margin: 7vh;
 }
 
 button {
@@ -67,6 +68,7 @@ ul {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 
@@ -233,19 +235,15 @@ footer {
 }
 
 #dev-tag,
-#dev-tag + span,
-#attribution-tag,
-#attribution-tag + span {
+#attribution-tag {
   font-family: 'Playfair';
   font-style: italic;
 }
 
-#dev-tag,
-#dev-tag + span {
+#dev-tag {
   font-size: 1.25rem;
 }
 
-#attribution-tag,
-#attribution-tag + span {
+#attribution-tag {
   font-size: 1rem;
 }

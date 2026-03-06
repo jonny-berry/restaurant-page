@@ -27,6 +27,10 @@ export default {
         test: /\.html$/i,
         use: ["html-loader"],
       },
+      {
+        test: /\.(png)$/i,
+        type: "asset/resource",
+      },
     ],
   },
 };
