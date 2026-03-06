@@ -1,0 +1,50 @@
+#menu-main-content {
+  display: grid;
+  grid-template: 0.5fr 8fr 8fr / 1fr;
+  margin: 3% 5%;
+  gap: 2%;
+  overflow: hidden;
+}
+
+#menu-page-heading {
+  font-size: 3.5rem;
+  justify-self: center;
+  align-self: center;
+}
+
+
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: 500;
+  justify-self: center;
+  align-self: center;
+}
+
+
+.section-cards-container {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  gap: 5% 10%;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  font-weight: 300;
+}
+
+.section-card {
+  background-color: #213d28;
+  padding: 2.5%;
+  border-radius: 25px;
+}
+
+.section-card > img {
+  margin-bottom: 3%;
+  border-radius: 25px;
+}
