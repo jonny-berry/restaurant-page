@@ -4,24 +4,32 @@ import { renderFooter } from "./index.js";
 
 
 
-const mainWrapper = document.createElement('div');
-mainWrapper.id = 'home-main-content';
-
-const contentDiv = document.getElementById('content');
-contentDiv.appendChild(mainWrapper);
-
-
 
 export function renderHomePage() {
-  renderHeroSection();
-  renderAboutSection();
-  renderMenuSection();
+  const contentDiv = document.getElementById('content');
+  const mainWrapper = document.createElement('div');
+  
+  mainWrapper.id = 'home-main-content';
+  contentDiv.appendChild(mainWrapper);
+
+
+  if (document.getElementById('menu-main-content')) {
+    contentDiv.removeChild(document.getElementById('menu-main-content'));
+  }
+
+  if (document.querySelector('footer')) {
+    contentDiv.removeChild(document.querySelector('footer'));
+  }
+
+  renderHeroSection(mainWrapper);
+  renderAboutSection(mainWrapper);
+  renderMenuSection(mainWrapper);
   renderFooter();
 }
 
 
 
-function renderHeroSection() {
+function renderHeroSection(homeMainContent) {
   // Create elements
   const container = document.createElement('div');
   const content = document.createElement('div');
@@ -50,7 +58,7 @@ function renderHeroSection() {
   image.alt = 'A Capybara resting under a water spout with water splashing over its head';
 
   // Append elements
-  mainWrapper.appendChild(container);
+  homeMainContent.appendChild(container);
   container.appendChild(content);
   content.appendChild(heading);
   content.appendChild(subheading);
@@ -61,7 +69,7 @@ function renderHeroSection() {
 
 
 
-function renderAboutSection() {
+function renderAboutSection(homeMainContent) {
   // Create elements
   const container = document.createElement('div');
   const heading = document.createElement('h1');
@@ -77,14 +85,14 @@ function renderAboutSection() {
   subheading.textContent = 'At Capybara Café, we invite you to gather, graze, and unwind. Whether you\'re catching up with friends, diving into a book, or just enjoying a quiet moment, our cozy corners and plant-filled nooks are designed for lounging without a care.';
 
   // Append elements
-  mainWrapper.appendChild(container);
+  homeMainContent.appendChild(container);
   container.appendChild(heading);
   container.appendChild(subheading);
 }
 
 
 
-function renderMenuSection() {
+function renderMenuSection(homeMainContent) {
   // Create elements
   const container = document.createElement('div');
   const heading = document.createElement('h1');
@@ -108,7 +116,7 @@ function renderMenuSection() {
   juicesLi.textContent = 'Juices, smoothies, and wholesome bites 🥤🍹🍊';
 
   // Append elements
-  mainWrapper.appendChild(container);
+  homeMainContent.appendChild(container);
   container.appendChild(heading);
   container.appendChild(subheading);
   container.appendChild(ul);

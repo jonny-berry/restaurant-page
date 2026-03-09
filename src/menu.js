@@ -3,27 +3,31 @@ import latteImage from "./images/menu-images/matcha-latte.jpg";
 import { renderFooter } from "./index.js";
 
 
-const content = document.getElementById('content');
-
-const menuMainContent = document.createElement('div');
-menuMainContent.id = 'menu-main-content';
-
-const homeMainContent = document.getElementById('home-main-content');
-
-content.removeChild(homeMainContent);
-content.appendChild(menuMainContent);
-
 
 export function renderMenuPage() {
-  renderPageHeading();
-  renderMenuSection();
-  renderMenuSection();
+  const content = document.getElementById('content');
+  const menuMainContent = document.createElement('div');
+
+  menuMainContent.id = 'menu-main-content';
+  content.appendChild(menuMainContent);
+
+  if (document.getElementById('home-main-content')) {
+    content.removeChild(document.getElementById('home-main-content'));
+  }
+
+  if (document.querySelector('footer')) {
+    content.removeChild(document.querySelector('footer'));
+  }
+
+  renderPageHeading(menuMainContent);
+  renderMenuSection(menuMainContent);
+  renderMenuSection(menuMainContent);
   renderFooter();
 }
 
 
 
-function renderPageHeading() {
+function renderPageHeading(menuMainContent) {
   const menuHeading = document.createElement('h1');
   menuHeading.id = 'menu-page-heading';
   menuHeading.textContent = 'Menu';
@@ -32,7 +36,7 @@ function renderPageHeading() {
 
 
 
-function renderMenuSection() {
+function renderMenuSection(menuMainContent) {
   // Create elements
   const sectionContainer = document.createElement('div');
   const sectionHeading = document.createElement('p');

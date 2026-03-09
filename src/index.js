@@ -1,32 +1,52 @@
 import { renderHomePage } from "./home.js";
 import { renderMenuPage } from "./menu.js";
 import "./styles.css";  // Global styles
-import "./menu.css"
+import "./home.css";
+import "./menu.css";
+
+
+
+renderHomePage(); // Render home page on site load
+
 
 
 const content = document.getElementById('content');
-const homeMainContent = document.getElementById('home-main-content');
-
-
-
-// renderHomePage(); // Render home page on site load
-renderMenuPage();
-
-
-
 const menuButton = document.getElementById('menu-button');
 
-
-
 menuButton.addEventListener('click', () => {
-  homeMainContent.innerHTML = '';
-  content.removeChild(homeMainContent);
+  if (!document.getElementById('menu-main-content')) {
+    renderMenuPage();
+  }
+})
+
+
+
+const homeButton = document.getElementById('home-button');
+
+homeButton.addEventListener('click', () => {
+  if (!document.getElementById('home-main-content')) {
+    renderHomePage();
+    
+    const heroButton = document.getElementById('hero-button');
+
+    heroButton.addEventListener('click', () => {
+    renderMenuPage();
+    })
+  }
+})
+
+
+const heroButton = document.getElementById('hero-button');
+
+heroButton.addEventListener('click', () => {
   renderMenuPage();
 })
 
 
 
 export function renderFooter() {
+  const content = document.getElementById('content');
+
   // Create elements
   const container = document.createElement('footer');
   const devAnchor = document.createElement('a');

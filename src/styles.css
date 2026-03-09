@@ -72,7 +72,7 @@ a {
 #content {
   background-color: #569a65;
   display: grid;
-  grid-template: 1fr 10fr 1fr / 1fr;
+  grid-template: 1fr 8fr 1fr / 1fr;
   width: 80vw;
   border-radius: 30px;
 }
